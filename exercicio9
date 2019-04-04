@@ -1,0 +1,21 @@
+1) 
+	a)
+		grep "M&aacute;ximo" historico.html   -m 1 | tail -1 | tr ">" "<" | cut -f7 -d'<'
+
+
+	b)
+		grep "M&eacute;dia" historico.html -A2 -m 1 | tail -1 | tr ">" "<" | cut -f7 -d'<'
+
+
+	c)
+		grep "Precipitação" historico.html -A15 -m 1 | tail -1 | tr ">" "<" | cut -f5 -d'<'
+
+2)
+	md5sum *.txt > $(date +"%G%m%e_%A.txt"
+
+3)
+	a)
+		curl -s https://ipinfo.io/ | grep "ip" | cut -f4 -d'"'
+
+	b)
+		curl -s https://ipinfo.io/8.8.8.8 | grep -e "city" -e "postal" | cut -f4 -d'"'
